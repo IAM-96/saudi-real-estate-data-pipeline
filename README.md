@@ -37,7 +37,6 @@ saudi-real-estate-data-pipeline/
 ├── notebooks/
 │   └── data_pipeline.ipynb
 │
-├── scripts/        # (اختياري لو فصلت الكود)
 │
 ├── outputs/        # Gold Layer (نتائج التحليل)
 │   ├── city_sales.csv
