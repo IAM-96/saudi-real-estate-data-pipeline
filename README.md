@@ -1,54 +1,43 @@
 # Saudi Real Estate Data Pipeline
 
-## 📌 Overview
-This project builds an end-to-end data pipeline for analyzing Saudi real estate auction data using multiple datasets and API integration.
+## Overview
 
-## 🏗️ Architecture
-The pipeline follows the Medallion Architecture:
+This project analyzes Saudi real estate auction data, taking raw quarterly auction extracts and aggregating them into city-level and time-trend summary tables for analysis.
 
-- Bronze Layer: Raw CSV data ingestion
-- Silver Layer: Data cleaning, transformation, and standardization
-- Gold Layer: Analytical data modeling and aggregation
+## Design intent
 
-## ⚙️ Technologies Used
+The project is structured around a Medallion (Bronze/Silver/Gold) mindset:
+
+- Bronze: raw quarterly auction CSV exports, as received
+- Silver: cleaning, standardization, and Arabic-text normalization
+- Gold: aggregated analytics tables (city sales, time trends)
+
+## What's in this repo today
+
+- `AuctionAggQuarterElectronic Quarter1-4 2025*.csv` — raw quarterly auction data (Bronze)
+- `city_sales.csv` — aggregated sales by city (Gold)
+- `time_trend.csv` — time-series sales trend (Gold)
+
+The cleaning/transformation code and notebooks that produce the Gold tables are still being organized and will be added to this repo.
+
+## Technologies
+
 - Python (Pandas)
-- Data Cleaning & Transformation
-- Data Modeling
-- Microsoft Fabric (planned deployment)
+- Planned: Microsoft Fabric for orchestration and deployment
 
-## 📊 Key Insights
+## Key insights
+
 - Top cities by total real estate sales
-- Regional distribution of auctions
 - Time-series trends of real estate sales
 
-## 🚀 Features
-- Multi-file data ingestion
-- Data cleaning and normalization (Arabic handling)
-- Aggregated analytics tables
-- Time-series analysis
+## Future work
 
-## 📁 Project Structure
-saudi-real-estate-data-pipeline/
-│
-├── data/
-│   ├── raw/        # ملفات CSV الأصلية (Bronze)
-│   ├── processed/  # البيانات بعد التنظيف (Silver)
-│
-├── notebooks/
-│   └── data_pipeline.ipynb
-│
-│
-├── outputs/        # Gold Layer (نتائج التحليل)
-│   ├── city_sales.csv
-│   ├── region_analysis.csv
-│   └── time_trend.csv
-│
-├── README.md
-└── requirements.txt
-## 📌 Future Work
-- Integrate real-time API data
-- Deploy pipeline on Microsoft Fabric
-- Build dashboards
+- Publish the data-cleaning/transformation notebook
+- Add a requirements.txt and reproducible pipeline script
+- Deploy on Microsoft Fabric
+- Build dashboards in Power BI
 
-## 👤 Author
-Ibrahim Abkar
+## Author
+
+Ibrahim Abakar
+
